@@ -1,3 +1,3 @@
-require('./../../../lib/framework/router.js')
+require('./../../../lib/framework/router.js');
 
-// require 
+require('./stubs/controller.js');

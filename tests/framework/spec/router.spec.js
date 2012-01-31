@@ -1,15 +1,13 @@
+require("./spec_helper");
+
 describe('Router', function(){
   beforeEach(function(){
-    Controller = function(){}
-    Controller.prototype.index = function(){
-      console.log("Hello World");
-    }
     controller = new Controller();
+    spyOn(controller, "index" );
   });
 
   describe('route', function(){
     it('should execute a controller action based on exact match', function(){
-      spyOn(controller, "index" );
       var router = new Router({'/home': controller.index});
       router.route('/home');
       expect(controller.index).toHaveBeenCalled();
