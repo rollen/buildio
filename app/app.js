@@ -1,7 +1,5 @@
 console.log("Starting application");
 
-require("./controllers/tests_controller");
-require("./controllers/errors_controller");
 require("./../lib/build.js");
 
 Application = function(request, response){
@@ -15,7 +13,6 @@ Application.prototype.create = function(){
 
   controller_map = {};
   controller_map['/tests'] = tests_controller.index;
-  controller_map['/null'] = errors_controller.index;
-  router = new Router(controller_map);
+  router = new Router(controller_map, errors_controller);
   router.route(request.url); 
 }
