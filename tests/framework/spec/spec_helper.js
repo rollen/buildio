@@ -1,6 +1,3 @@
-Router = function(){
-}
+require('./../../../lib/framework/router.js')
 
-Router.prototype.route = function(path){
-  
-}
+// require 
