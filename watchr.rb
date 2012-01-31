@@ -8,3 +8,9 @@ watch( 'tests/app/features' ) do
   puts "tests/app/features"
   system('jasmine-node tests/app/features')
 end
+
+watch( '(app/*)') do
+  puts "Running app features"
+  system('jasmine-node app/tests/')
+end
+
