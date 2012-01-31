@@ -14,17 +14,5 @@ describe('Router', function(){
       router.route('/home');
       expect(controller.index).toHaveBeenCalled();
     });
-
-    it('should only execute functions with given interface function(request, response)', function(){
-
-    });
-
-    it('should execute a controller action based on a regex', function(){
-
-    });
-
-    it('should execute a controller action based on first regex match', function(){
-
-    });
   });
 });
