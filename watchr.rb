@@ -1,6 +1,10 @@
 watch( '(lib/*)') do
   puts "Running lib features"
-  system('jasmine-node lib/tests/spec lib/tests/spec/controllers')
+  system('jasmine-node lib/tests/features')
+  puts "Running lib specs"
+  system('jasmine-node lib/tests/spec')
+  puts "Running cotroller tests"
+  system('jasmine-node lib/tests/spc/contollers')
 end
 
 watch( '(app/*)') do
