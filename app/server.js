@@ -1,8 +1,6 @@
 var http = require('http');
 require('./app.js');
 
-http.createServer(function onRequestReceived(request, response){
-}).listen(8888);
 
 http.createServer(function onRequestReceived(request, response){
   console.log('Routing ' + request.url);
