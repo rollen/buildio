@@ -12,7 +12,7 @@ describe('Given I have an app', function(){
 
     describe('Then I should see the scenarios.js file', function(){
       it('Then I should see the scenarios.js file', function(){
-        expect(this.browser.response._body).toBe(200);
+        expect(this.browser.response._head).toBe(200);
       });
     });
   });
