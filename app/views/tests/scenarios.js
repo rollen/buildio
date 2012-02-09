@@ -1,9 +1,20 @@
-describe('App', function(){
-  beforeEach(function(){
-    browser().navigateTo('/blah');
-  });
+describe('Feature: creating an account', function(){
+  describe('Given I am an unregistered user', function(){
+    beforeEach(function(){
+      browser().navigateTo('/');
+    });
 
-  it('should do nothing', function(){
-    expect(5).toBe(4);
+    describe('When I create my account', function(){
+      beforeEach(function(){
+        input('username').enter('rollen');
+        input('password').enter('password');
+      });
+
+      describe('Then I should see myself logged in', function(){
+        it('', function(){
+
+        });
+      });
+    });
   });
 });
