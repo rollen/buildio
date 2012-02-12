@@ -1,18 +1,21 @@
 <!doctype html>
 <html xmlns:ng="http://angularjs.org/">
-<head>
-  <meta charset="utf-8">
-  <title>Google Phone Gallery</title>
+  <head>
+    <meta charset="utf-8">
+    <title>Google Phone Gallery</title>
 
-  <script src="angular/angular.js" ng:autobind></script>
-  <script src="angular/controllers.js"></script>
-  <script src="angular/filters.js"></script>
-  <link rel="stylesheet" href="css/app.css"/>
-</head>
-<body ng:controller="PhoneCatCtrl">
-
-  <ng:view></ng:view>
-
-</body>
+    <script src="angular/angular.js" ng:autobind></script>
+    <script src="angular/controllers.js"></script>
+    <script src="angular/filters.js"></script>
+    <link rel="stylesheet" href="css/app.css"/>
+  </head>
+  <body>
+    <div ng:controller='UserLoginController'>
+      <label id='user_login_status' name=status ng:value={{status}}></label>
+    </div>
+    <input type='text' name='username'></input>
+    <input type='password' name='password'></input>
+    <input type='submit' name='submit' class='submit'></input>
+  </body>
 </html>
 

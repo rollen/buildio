@@ -1,0 +1,25 @@
+namespace :test do
+  desc 'run the tests'
+  task :run do
+    command = "java " \
+      "-jar development/JsTestDriver.jar " \
+      "--config development/jsTestDriver.conf " \
+      "--basePath #{File.expand_path('../../', __FILE__)} " \
+      "--tests all"
+    system(command)
+  end
+
+  desc 'run the jsTestDriverServer'
+  task :server do
+    puts 'Starting JsTestDirver Server'
+    command = "java " \
+      "-jar development/JsTestDriver.jar " \
+      "--config development/jsTestDriver.conf " \
+      "--port 9877 " \
+      "--basePath #{File.expand_path('../../', __FILE__)}"
+    puts command
+    system(command)
+  end
+end
+
+
