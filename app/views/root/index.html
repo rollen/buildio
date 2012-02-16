@@ -11,7 +11,13 @@
   </head>
   <body>
     <div ng:controller='UserLoginController'>
-      <label id='user_login_status' name=status ng:value={{status}}></label>
+      <label id='user_login_status' name=status >{{status}}</label>
+      <input name='status' type='text' />
+    </div>
+
+    <div ng:controller='UserLoginController'>
+      <label id='user_login_status' name=status >{{status}}</label>
+      <input name='status' type='text' />
     </div>
     <input type='text' name='username'></input>
     <input type='password' name='password'></input>

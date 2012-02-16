@@ -13,6 +13,7 @@ describe('Feature: creating an account', function(){
 
       describe('Then I should see myself logged in', function(){
         it('', function(){
+          pause();
           expect(element('#user_login_status')).toBe('Log out'); 
         });
       });

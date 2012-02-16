@@ -16,6 +16,7 @@ namespace :test do
       "-jar development/JsTestDriver.jar " \
       "--config development/jsTestDriver.conf " \
       "--port 9877 " \
+      "--browser open " \
       "--basePath #{File.expand_path('../../', __FILE__)}"
     puts command
     system(command)
