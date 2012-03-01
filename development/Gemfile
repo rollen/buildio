@@ -2,3 +2,6 @@ source :rubygems
 
 gem 'watchr'
 gem 'rake'
+gem 'guard'
+gem 'guard-livereload'
+
