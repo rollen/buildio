@@ -24,6 +24,6 @@ describe('Feature: creating an account', function(){
 
     it('should have the user signed out', function(){
       expect(element('#user_login_status').text()).toBe('Log in');
-    })
+    });
   });
 });
