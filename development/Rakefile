@@ -23,6 +23,19 @@ namespace :test do
     puts command
     system(command)
   end
+
+  desc 'run the jsTestDriverServer for unit tests'
+  task :unit_server do
+    puts 'Starting unit test server'
+    command = "java " \
+      "-jar development/JsTestDriver.jar " \
+      "--config development/jsTestDriverUnit.conf " \
+      "--port 9876 " \
+      "--browser open " \
+      "--basePath #{File.expand_path('../../', __FILE__)}"
+    puts command
+    system(command)
+  end
 end
 
 
