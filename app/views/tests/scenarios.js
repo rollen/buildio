@@ -18,6 +18,10 @@ describe('Feature: creating an account', function(){
       });
     });
 
+    it('should have the url exist', function(){
+      expect(browser().window.path()).toBe(5);
+    });
+
     it('should have the user signed out', function(){
       expect(element('#user_login_status')).toBe('Log in');
     })
