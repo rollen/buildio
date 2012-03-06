@@ -1,5 +1,5 @@
 var http = require('http');
-require('./app.js');
+require('./server/app.js');
 
 var port = process.env.PORT || 8888;
 http.createServer(function onRequestReceived(request, response){
