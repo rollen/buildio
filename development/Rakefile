@@ -31,11 +31,22 @@ namespace :test do
       "-jar development/JsTestDriver.jar " \
       "--config development/jsTestDriverUnit.conf " \
       "--port 9876 " \
-      "--browser open " \
       "--basePath #{File.expand_path('../../', __FILE__)}"
     puts command
     system(command)
   end
+  
+  desc 'run the unit tests'
+  task :unit_run do
+    command = "java " \
+      "-jar development/JsTestDriver.jar " \
+      "--config development/jsTestDriverUnit.conf " \
+      "--basePath #{File.expand_path('../../', __FILE__)} " \
+      "--tests all "
+    puts command
+    system(command)
+  end
+
 end
 
 
