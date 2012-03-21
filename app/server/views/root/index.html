@@ -12,6 +12,8 @@
   </head>
   <body>
     <div ng:controller='UserLoginController'>
+      <label> Rollen </label>
+      {{$cookieStore}}
       <label id='user_login_status' name=status >{{status}}</label>
       <input name='status' type='text' />
     </div>
