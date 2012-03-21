@@ -28,7 +28,7 @@ namespace :test do
   task :unit_server do
     puts 'Starting unit test server'
     command = "java " \
-      "-jar development/JsTestDriver2.jar " \
+      "-jar development/JsTestDriver.jar " \
       "--config development/jsTestDriverUnit.conf " \
       "--port 10000 " \
       "--basePath #{File.expand_path('../../', __FILE__)}"
@@ -39,7 +39,7 @@ namespace :test do
   desc 'run the unit tests'
   task :unit_run do
     command = "java " \
-      "-jar development/JsTestDriver2.jar " \
+      "-jar development/JsTestDriver.jar " \
       "--config development/jsTestDriverUnit.conf " \
       "--basePath #{File.expand_path('../../', __FILE__)} " \
       "--tests all "

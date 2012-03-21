@@ -1,4 +1,4 @@
-require('./../../lib/nervecenter');
+require('nervex');
 require('./factories/app_builder');
 AppBuilder.root = __dirname;
 require('./factories/router');
