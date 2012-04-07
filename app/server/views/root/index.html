@@ -1,25 +1,17 @@
-<!doctype html>
-<html xmlns:ng="http://angularjs.org/">
+<html >
   <head>
-    <meta charset="utf-8">
-    <title>Google Phone Gallery</title>
-
-    <script src="angular/angular.js" ng:autobind></script>
-    <script src="angular/controllers.js"></script>
-    <script src="angular/filters.js"></script>
-    <script src="angular/widgets.js"></script>
-    <link rel="stylesheet" href="css/app.css"/>
+    <link rel="stylesheet" href="/assets/bootstrap.css">
+    <script src="assets/angular.js"></script>
+    <script src="/lib/controllers.js"></script>
   </head>
   <body>
-    <div ng:controller='UserLoginController'>
-      <label> Rollen </label>
-      {{$cookieStore}}
-      <label id='user_login_status' name=status >{{status}}</label>
-      <input name='status' type='text' />
+    <div ng-app>
+      <div ng-controller="UserLoginController">
+        <label>Name:</label>
+        <input type="text" ng-model="yourName">
+        <hr>
+        <h1>Hello {{status}}!</h1>
+      </div>
     </div>
-    <input type='text' name='username'></input>
-    <input type='password' name='password'></input>
-    <input type='submit' name='submit' class='submit'></input>
   </body>
 </html>
-
