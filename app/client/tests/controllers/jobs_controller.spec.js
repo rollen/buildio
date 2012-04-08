@@ -1,0 +1,3 @@
+describe('JobsController', function(){
+
+});

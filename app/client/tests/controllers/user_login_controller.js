@@ -5,7 +5,7 @@ describe('LoginController', function(){
     });
 
     it('logins a user', function(){
-      expect(5).toBe(4);
+
     });
   });
 });
