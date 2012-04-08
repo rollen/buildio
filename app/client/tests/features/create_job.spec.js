@@ -8,9 +8,6 @@ describe('Given I have not created any jobs', function(){
   });
   describe('When I create a job', function(){
     describe('Then I should see the created job', function(){
-      it('does nothing', function(){
-        expect(5).toBe(4);
-      });
     });
   });
 });

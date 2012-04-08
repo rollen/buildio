@@ -35,7 +35,7 @@ namespace :test do
     puts command
     system(command)
   end
-  
+
   desc 'run the unit tests'
   task :unit_run do
     command = "java " \
@@ -49,18 +49,16 @@ namespace :test do
 
 end
 
-namespace :dev do
-  desc 'clean processes'
-  task :clean => :clear
+desc 'clean processes'
+task :clean => :clear
 
-  desc 'clear up processes'
-  task :clear do
-    ports = ['9877', '10000']
-    ports.each do |port|
-      cmd = "lsof -i :#{port} | tail -n +2 | awk '{print $2}' | xargs kill"
+desc 'clear up processes'
+task :clear do
+  ports = ['9877', '10000']
+  ports.each do |port|
+    cmd = "lsof -i :#{port} | tail -n +2 | awk '{print $2}' | xargs kill"
       puts "killing processes on port #{port}"
-      system cmd
-    end
+    system cmd
   end
 end
 
