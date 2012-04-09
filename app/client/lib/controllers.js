@@ -1,9 +1,7 @@
-function UserLoginController($scope){
-  $scope.status = "Hello world";
-  $scope.rubbish = "this is rubbish";
-}
-
-function JobsController($scope){
-
+function JobsController($scope ){
+  $scope.jobs = [];
+  $scope.create_job = function(job){
+    $scope.jobs.push(job); 
+  }
 }
 
