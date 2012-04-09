@@ -3,6 +3,5 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "nervex" : "https://aveprod:thisismypassword123@github.com/rollen/nerve/tarball/master"
   }
 }
