@@ -7,10 +7,23 @@ describe('Given I have not created any jobs', function(){
   beforeEach(function(){
     browser().navigateTo('index');
   });
-  describe('When I create a job', function(){
-    describe('Then I should see the created job', function(){
-      it('does nothing', function(){
 
+  describe('Jobs List', function(){
+    it('should be empty', function(){
+      expect(repeater('ul li').count()).toEqual(0); 
+    });
+  });
+
+  describe('When I create a job', function(){
+    beforeEach(function(){
+      input('job_title').enter('Software Engineer');
+      input('job_description').enter('I want the dude to build lots of software');
+      element(':button').click();
+    });
+
+    describe('Then I should see the created job', function(){
+      it('should have the job listed', function(){
+        expect(repeater('ul li').count()).toEqual(1); 
       });
     });
   });

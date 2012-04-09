@@ -3,3 +3,7 @@ function UserLoginController($scope){
   $scope.rubbish = "this is rubbish";
 }
 
+function JobsController($scope){
+
+}
+

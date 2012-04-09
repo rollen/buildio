@@ -1,17 +1,18 @@
-<html >
+<html ng-app>
   <head>
     <link rel="stylesheet" href="/assets/bootstrap.css">
     <script src="assets/angular.js"></script>
-    <script src="/lib/controllers.js"></script>
+    <script src="lib/controllers.js"></script>
   </head>
   <body>
-    <div ng-app>
-      <div ng-controller="UserLoginController">
-        <label>Name:</label>
-        <input type="text" ng-model="yourName">
-        <hr>
-        <h1>Hello {{status}}!</h1>
-      </div>
+    <div ng-controller="JobsController">
+      <input type="text" ng-model='job_title' /><br />
+      <input type="text" ng-model='job_description' /><br />
+      <input type="button" value="submit" ng-click=create_job />
+      <ul ng:repeat='job in jobs'>
+        <li>{{job.title}}</li>
+        <li>{{job.description}}</li>
+      </ul>
     </div>
   </body>
 </html>

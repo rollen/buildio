@@ -44,6 +44,7 @@ namespace :test do
       "-jar development/JsTestDriver.jar " \
       "--config development/jsTestDriverUnit.conf " \
       "--basePath #{File.expand_path('../../', __FILE__)} " \
+      "--verbose " \
       "--tests all "
     puts command
     system(command)
