@@ -1,4 +1,5 @@
 namespace :test do
+
   desc 'run the tests'
   task :run do
     command = "java " \
@@ -6,6 +7,7 @@ namespace :test do
       "--config development/jsTestDriver.conf " \
       "--basePath #{File.expand_path('../../', __FILE__)} " \
       "--tests all " \
+      "--verbose " \
       "--reset"
     puts command
     system(command)

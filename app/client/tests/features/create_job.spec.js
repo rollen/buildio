@@ -5,9 +5,13 @@
 
 describe('Given I have not created any jobs', function(){
   beforeEach(function(){
+    browser().navigateTo('index');
   });
   describe('When I create a job', function(){
     describe('Then I should see the created job', function(){
+      it('does nothing', function(){
+
+      });
     });
   });
 });
