@@ -1,5 +1,5 @@
 # watch unit tests
-watch( 'app/client/tests/unit/controller') do
+watch( 'app/client/tests/unit/') do
   system('clear')
   puts "Running app client unit tests"
   system('rake -f ./development/Rakefile test:unit_run')

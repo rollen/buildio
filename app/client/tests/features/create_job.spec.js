@@ -10,7 +10,7 @@ describe('Given I have not created any jobs', function(){
 
   describe('Jobs List', function(){
     it('should be empty', function(){
-      expect(repeater('ul li').count()).toEqual(0); 
+      expect(repeater('ul > #job').count()).toEqual(0); 
     });
   });
 
@@ -22,8 +22,10 @@ describe('Given I have not created any jobs', function(){
     });
 
     describe('Then I should see the created job', function(){
-      it('should have the job listed', function(){
-        expect(repeater('ul li').count()).toEqual(1); 
+      describe('Jobs List', function(){
+        it('should have the job listed', function(){
+          expect(repeater('ul > #job').count()).toEqual(1); 
+        });
       });
     });
   });

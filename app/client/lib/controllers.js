@@ -1,7 +1,8 @@
-function JobsController($scope ){
+var JobsController = function($scope, job){
   $scope.jobs = [];
-  $scope.create_job = function(job){
-    $scope.jobs.push(job); 
+  $scope.create = function(new_job){
+    $scope.jobs.push(new_job); 
+    job.create(new_job);
   }
 }
 
