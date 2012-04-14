@@ -7,6 +7,6 @@
     "node": "0.6.x"
   },
   "dependencies": {
-    "nervex" : "https://aveprod:thisismypassword123@github.com/rollen/nerve/tarball/0.0.2"
+    "nervex" : "https://aveprod:thisismypassword123@github.com/rollen/nerve/tarball/master"
   }
 }
