@@ -2,6 +2,7 @@
 # More info at https://github.com/guard/guard#readme
 
 guard 'livereload', :port => '35728' do
+  watch(%r{app/server/.+})
   watch(%r{app/views/.+\.(html|erb|haml|slim)})
   watch(%r{app/helpers/.+\.rb})
   watch(%r{public/.+\.(css|js|html)})

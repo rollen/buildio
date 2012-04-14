@@ -5,12 +5,55 @@
     <script src="assets/angular-resource.js"></script>
     <script src="lib/services.js"></script>
     <script src="lib/controllers.js"></script>
+    <meta name='viewport' content="width=device-width", initial-scale='1.0' />
   </head>
   <body>
-    <div ng-controller="JobsController">
-      <input type="text" ng-model='job_title' /><br />
-      <input type="text" ng-model='job_description' /><br />
-      <input type="button" value="submit" ng-click="create({title: job_title, description:job_description})" />
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <ul class="nav">
+            <li>
+            <a href="#">Home</a>
+            </li>
+            <li>
+            <a href="#">About</a>
+            </li>
+            <li>
+            <a href="#">Contact</a>
+            </li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+    <hr />
+
+    <div class="container-fluid span12" ng-controller="JobsController">
+      <h1> Create Campaign</h1>
+      <br />
+      <form class="form-horizontal">
+
+        <div class="control-group">
+          <label class="control-label" for="input01">Job Title</label>
+          <div class="controls">
+            <input type="text" class="input-xlarge" id="input01" ng-model='job_title' />
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="textarea">Job Description</label>
+          <div class="controls">
+            <textarea ng-model='job_description' class="input-xlarge" id="textarea" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" ng-click="create({title: job_title, description:job_description})" >
+            Create Campaign
+          </button>
+        </div>
+
+
+      </form>
 
       <ul ng:repeat='job in jobs'>
         <div id='job'>
