@@ -1,4 +1,4 @@
 require('./../app')
-require('./../../../lib/tests/browser')
-require('./../../../lib/tests/stubs')
+require('./../../../node_modules/nervex/tests/application/lib/browser')
+require('./../../../node_modules/nervex/tests/application/stubs/')
 
