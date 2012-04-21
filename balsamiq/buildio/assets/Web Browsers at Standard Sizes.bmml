@@ -1,0 +1,101 @@
+<mockup version="1.0" skin="sketch" measuredW="2282" measuredH="2704" mockupW="2209" mockupH="2606">
+  <controls>
+    <control controlID="0" controlTypeID="__group__" x="73" y="107" w="812" h="699" measuredW="812" measuredH="699" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Browser%20-%20800%20x%20600</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="0" w="812" h="699" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>A%20Web%20Page%20at%20800x600%20%0Ahttp%3A//</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="1" controlTypeID="__group__" x="85" y="1937" w="800" h="600" measuredW="800" measuredH="600" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Canvas%20-%20800%20x%20600</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="800" h="600" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="1">
+          <controlProperties>
+            <backgroundAlpha>0.5</backgroundAlpha>
+            <borderStyle>none</borderStyle>
+            <color>15132390</color>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="2" controlTypeID="__group__" x="916" y="106" w="1037" h="867" measuredW="1037" measuredH="867" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Browser%20-%201024%20x%20768</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="0" w="1037" h="867" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="2">
+          <controlProperties>
+            <text>A%20Web%20Page%20at%201024x768%20%0Ahttp%3A//</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="3" controlTypeID="__group__" x="928" y="1936" w="1024" h="768" measuredW="1024" measuredH="768" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Canvas%20-%201024%20x%20768</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="1024" h="768" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="3">
+          <controlProperties>
+            <backgroundAlpha>0.5</backgroundAlpha>
+            <borderStyle>none</borderStyle>
+            <color>15132390</color>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::StickyNote" x="1979" y="98" w="303" h="503" measuredW="109" measuredH="123" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>14</size>
+        <text>%7Bcolor%3A%23ff0000%7DAbout%7Bcolor%7D%0AEric%20S.%20asked%20how%20to%20resize%20Browser%20controls%20to%20standard%20sizes%20here%2C%20so%20I%20thought%20I%27d%20share%20them%20here.%0A%20%0AWhat%20I%20did%20was%20to%20create%20two%20Rectangle%20controls%2C%20size%20them%20with%20the%20%22position%20and%20size%22%20property%20inspector%2C%20then%20put%20two%20Browser%20windows%20below%20them%2C%20so%20that%20the%20inside%20of%20the%20browsers%20would%20match%20the%20rectangles.%0A%20%0A-Peldi%0A%20%0A%7Bcolor%3A%23ff0000%7DInstallation%7Bcolor%7D%0ATo%20use%20as%20a%20symbol%20library%2C%20add%20to%20your%20account%20assets%20or%20to%20a%20project%20assets%20folder.%0A%20%0A%7Bcolor%3A%23ff0000%7DVersion%20History%7Bcolor%7D%0ACreated%20by%20Peldi%20of%20Balsamiq%20on%209%20Apr%202010.</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="__group__" x="73" y="1021" w="812" h="699" measuredW="812" measuredH="699" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Browser%20with%20Fill%20-%20800%20x%20600</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="0" w="812" h="699" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="5">
+          <controlProperties>
+            <text>A%20Web%20Page%20with%20Background%20Color%20at%20800x600%20%0Ahttp%3A//</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Canvas" x="6" y="72" w="800" h="600" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="5">
+          <controlProperties>
+            <backgroundAlpha>0.5</backgroundAlpha>
+            <borderStyle>none</borderStyle>
+            <color>3355443</color>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="6" controlTypeID="__group__" x="916" y="1020" w="1037" h="867" measuredW="1037" measuredH="867" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Browser%20with%20Fill%20-%201024%20x%20768</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="0" w="1037" h="867" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>A%20Web%20Page%20with%20Background%20Color%20at%201024x768%20%0Ahttp%3A//</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Canvas" x="6" y="72" w="1024" h="768" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="6">
+          <controlProperties>
+            <backgroundAlpha>0.5</backgroundAlpha>
+            <borderStyle>none</borderStyle>
+            <color>3355443</color>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

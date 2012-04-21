@@ -1,0 +1,73 @@
+<div ng-contoller="JobsController">
+  <br />
+  <form class="well span6">
+
+    <div class="control-group">
+      <label class="control-label"><strong>Job Title</strong></label>
+      <div class="controls">
+        <input type="text" class="span6" ng-model='job_title' />
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label"><strong>Company name</strong></label>
+      <div class="controls">
+        <input type="text" class="input-xlarge span6" ng-model='company_name' />
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label"><strong>Job Description</strong></label>
+      <div class="controls">
+        <textarea ng-model='job_description' class="input-xlarge span6" id="textarea" rows="3"></textarea>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label"><strong>Skills & requirements</strong></label>
+      <div class="controls">
+        <textarea ng-model='requirement' class="input-xlarge span6" id="textarea" rows="3"></textarea>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label"><strong>Key Technologies or Roles</strong> up to 5, seperated by spaces</label>
+      <div class="controls">
+        <input type="text" class="input-xlarge span6" ng-model='technologies' />
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label"><strong>About the company</strong></label>
+      <div class="controls">
+        <textarea ng-model='company_description' class="input-xlarge span6" id="textarea" rows="3"></textarea>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label"><strong>Company website URL</strong></label>
+      <div class="controls">
+        <input type="text" class="input-xlarge span6" ng-model='company_website' />
+      </div>
+      <p class='help-block'>e.g. "http://wwww.mycompany.com"
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-success" ng-click="create({title: job_title, 
+        description:job_description})" >
+        Preview Post
+      </button>
+      <button type="submit" class="btn btn-danger" ng-click="create({title: job_title, 
+        description:job_description})" >
+        Cancel
+      </button>
+    </div>
+
+  </form>
+  <ul ng:repeat='job in jobs'>
+    <div id='job'>
+      <li>{{job.title}}</li>
+      <li>{{job.description}}</li>
+    </div>
+  </ul>
+</div>
