@@ -1,7 +1,9 @@
 PartialsController = function(httpResponseWriter){
-  object = {}
-  object.show = function(){
+  var object = {}
+  var show = function(){
     httpResponseWriter.writeToResponse();
   }
+
+  object.show = show;
   return object;
 }

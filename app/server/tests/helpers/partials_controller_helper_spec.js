@@ -1,4 +1,4 @@
-describe('PartialControllerHelper', function(){
+describe('PartialsControllerHelper', function(){
   var urlstring,
   parials_folder_path,
   partial_controller_helper;

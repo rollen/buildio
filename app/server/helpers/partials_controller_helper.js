@@ -1,6 +1,7 @@
 PartialsControllerHelper = function(partials_folder, urlstring){
-  object = {}
-  object.parse_folderpath = function(){
+  var object = {}
+
+  var parse_folderpath = function(){
     var match =  urlstring.match(/partials\/(.*)\/.+$/);
     var subfolder_directory = match ? match[1] :  '';
     if(match){
@@ -10,9 +11,12 @@ PartialsControllerHelper = function(partials_folder, urlstring){
     }
   }
 
-  object.parse_filename = function(){
+  var parse_filename = function(){
     return urlstring.match(/partials.*\/(.+)$/)[1]
   }
+
+  object.parse_filename = parse_filename;
+  object.parse_folderpath = parse_folderpath;
 
   return object;
 }
