@@ -13,7 +13,7 @@ describe('JobsController', function(){
     });
   });
 
-  describe('.create', function(){
+  describe('.create()', function(){
     beforeEach(function(){
       this.job = [{title: 'Software Engineer', description: 'Do it all'}];
       scope.create(this.job);
@@ -25,6 +25,27 @@ describe('JobsController', function(){
 
     it('should attemp to persist the new job', function(){
       expect(mock.create).toHaveBeenCalledWith(this.job);
+    });
+  });
+
+  describe('.preview', function(){
+    it('should be initalize to false', function(){
+      expect(scope.preview).toBe('');
+    });
+  });
+
+  describe('.form', function(){
+    it('should be initalize to active', function(){
+      expect(scope.form).toBe('active');
+    });
+  });
+
+
+  describe('.toggle_view()', function(){
+    it('should toggle the preview', function(){
+      scope.toggle_view();
+      expect(scope.preview).toBe('active');
+      expect(scope.form).toBe('');
     });
   });
 });

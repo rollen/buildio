@@ -3,18 +3,17 @@
 //    As a advertiser
 //    I want to be able to create a jobs via the site
 
+var Then = it;
+
 describe('Given I have not created any jobs', function(){
+
   beforeEach(function(){
     browser().navigateTo('index');
   });
 
-  describe('Jobs List', function(){
-    it('should be empty', function(){
-      expect(repeater('ul > #job').count()).toEqual(0); 
-    });
-  });
+  describe('When I fill in the preview form', function(){
+    var PREVIEW_BUTTON_SELECTOR = ':button#job_preview';
 
-  describe('When I create a job', function(){
     beforeEach(function(){
       input('job_title').enter('Software Engineer');
       input('company_name').enter('Some Random Company');
@@ -23,15 +22,13 @@ describe('Given I have not created any jobs', function(){
       input('company_description').enter('We are a fun loving bunch');
       input('company_website').enter('http://www.somerandomcompany.com');
 
-      element(':button').click();
+      element(PREVIEW_BUTTON_SELECTOR).click();
     });
 
-    describe('Then I should see the created job', function(){
-      describe('Jobs List', function(){
-        it('should have the job listed', function(){
-          expect(repeater('ul > #job').count()).toEqual(1); 
-        });
-      });
+    Then('I should see the preview', function(){
+      var JOB_PREVIEW_TAB_SELECTOR ='.nav#job_tabs > #job_preview_tab';
+      var JOB_FORM_TAB_SELECTOR ='.nav#job_tabs > #job_preview_tab';
+
     });
   });
 });

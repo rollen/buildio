@@ -1,8 +1,11 @@
-<div ng-contoller="JobsController">
-  <form class="well span6">
-    <h1> Job Posting </h1>
-    <hr />
+<div ng-controller='JobsController'>
 
+  <ul class="nav nav-tabs span7" id='job_tabs'>
+    <li ng-click='toggle_view()' ng-class="form" id='job_form_tab'><a href="#">New Job</a></li>
+    <li ng-click='toggle_view()' ng-class="preview" id='job_preview_tab'><a>Preview</a></li>
+  </ul>
+
+  <form class="well span6" ng-hide='preview' >
     <div class="control-group">
       <label class="control-label"><strong>Job Title</strong></label>
       <div class="controls">
@@ -16,6 +19,7 @@
         <input type="text" class="input-xlarge span6" ng-model='company_name' />
       </div>
     </div>
+
 
     <div class="control-group">
       <label class="control-label"><strong>Job Description</strong></label>
@@ -54,20 +58,13 @@
     </div>
 
     <div class="form-actions">
-      <button type="submit" class="btn btn-success" ng-click="create({title: job_title, 
-        description:job_description})" >
+      <button ng-click="toggle_view()" class='btn btn-success' id='job_preview'>
         Preview Post
       </button>
-      <button type="submit" class="btn btn-danger" >
-        Cancel
-      </button>
     </div>
-
   </form>
-  <ul ng:repeat='job in jobs'>
-    <div id='job'>
-      <li>{{job.title}}</li>
-      <li>{{job.description}}</li>
-    </div>
-  </ul>
+
+  <div id="job_preview" ng-show='preview' class='span6'>
+    <h1>header</h1> 
+  </div>
 </div>
