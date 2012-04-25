@@ -29,8 +29,19 @@ describe('JobsController', function(){
       spyOn(response, 'end');
 
       controller.on_job_created();
-
       expect(response.end).toHaveBeenCalled();
+    });
+  });
+
+  describe('.on_job_creation_failed', function(){
+    it('closes the reponse with the failure message', function(){
+      var message = 'I am an error message';
+      spyOn(response, 'end');
+      spyOn(response, 'writeHead');
+
+      controller.on_job_creation_failed(message);
+      expect(response.writeHead).toHaveBeenCalledWith(400, {"Content-Type":"application/json"});
+      expect(response.end).toHaveBeenCalledWith(message);
     });
   });
 });
