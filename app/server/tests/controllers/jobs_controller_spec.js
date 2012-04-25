@@ -17,10 +17,13 @@ describe('JobsController', function(){
     it('creates a new job with given params', function(){
       spyOn(jobs_db_client, 'create');
       spyOn(controller, 'on_job_created');
+      spyOn(controller, 'on_job_creation_failed');
 
       controller.create(params);
 
-      expect(jobs_db_client.create).toHaveBeenCalledWith(params, controller.on_job_created);
+      expect(jobs_db_client.create).toHaveBeenCalledWith(params, 
+                                                         controller.on_job_created, 
+                                                         controller.on_job_creation_failed);
     });
   });
 
@@ -35,13 +38,13 @@ describe('JobsController', function(){
 
   describe('.on_job_creation_failed', function(){
     it('closes the reponse with the failure message', function(){
-      var message = 'I am an error message';
+      var error = { "error":"This is an error"}
       spyOn(response, 'end');
       spyOn(response, 'writeHead');
 
-      controller.on_job_creation_failed(message);
+      controller.on_job_creation_failed(error);
       expect(response.writeHead).toHaveBeenCalledWith(400, {"Content-Type":"application/json"});
-      expect(response.end).toHaveBeenCalledWith(message);
+      expect(response.end).toHaveBeenCalledWith(error.error);
     });
   });
 });

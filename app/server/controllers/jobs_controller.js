@@ -6,16 +6,13 @@ JobsController = function(response, client){
   }
 
   object.on_job_creation_failed = function(error){
-    console.log(error);
     response.writeHead(400, {"Content-Type":"application/json"});
-    response.end(error);
+    response.end(error.error);
   }
 
   var create = function(params){
-    console.log(params);
-    client.create(params, object.on_job_created);
+    client.create(params, object.on_job_created, object.on_job_creation_failed);
   }
-
 
   object.create = create;
 
