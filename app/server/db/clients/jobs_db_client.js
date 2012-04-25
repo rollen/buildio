@@ -3,7 +3,7 @@ JobsDbClient = function(client){
 
   var fields = ['job_title',
               'job_description',
-              'company_title',
+              'company_name',
               'requirements',
               'technologies',
               'company_description']

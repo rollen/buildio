@@ -42,7 +42,7 @@ describe('JobsDbClient', function(){
     it('should get values in order of the fields', function(){
       var params = { 'job_title':'Software Engineer',
         'job_description':'Job Description',
-        'company_title':'Company Title',
+        'company_name':'Company Title',
         'requirements':'Requirements',
         'technologies':'Technologies',
         'company_description':'Company Description' };
@@ -61,7 +61,7 @@ describe('JobsDbClient', function(){
       var expected_query = 'INSERT INTO Jobs (' + 
         'job_title, ' +
         'job_description, ' +
-        'company_title, ' +
+        'company_name, ' +
         'requirements, ' +
         'technologies, ' +
         'company_description) ' +

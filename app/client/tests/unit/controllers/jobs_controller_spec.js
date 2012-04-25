@@ -26,7 +26,7 @@ describe('JobsController', function(){
       scope.create(job);
     });
 
-    it('should attemp to persist the new job', function(){
+    it('should attempt to persist the new job', function(){
       expect(mock.create).toHaveBeenCalledWith(job);
     });
 
