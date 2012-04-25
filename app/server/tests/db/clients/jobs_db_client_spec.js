@@ -44,6 +44,7 @@ describe('JobsDbClient', function(){
         'job_description':'Job Description',
         'company_name':'Company Title',
         'requirements':'Requirements',
+        'company_website':'Company Website',
         'technologies':'Technologies',
         'company_description':'Company Description' };
 
@@ -51,6 +52,7 @@ describe('JobsDbClient', function(){
                                                    'Job Description',
                                                    'Company Title',
                                                    'Requirements',
+                                                   'Company Website',
                                                    'Technologies',
                                                    'Company Description']);
     });
@@ -63,10 +65,11 @@ describe('JobsDbClient', function(){
         'job_description, ' +
         'company_name, ' +
         'requirements, ' +
+        'company_website, ' +
         'technologies, ' +
         'company_description) ' +
         'values (' +
-        '$1, $2, $3, $4, $5, $6)';
+        '$1, $2, $3, $4, $5, $6, $7)';
 
       expect(system_under_test.insertstring('Jobs', params)).toBe(expected_query);
     });

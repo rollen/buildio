@@ -5,6 +5,7 @@ JobsDbClient = function(client){
               'job_description',
               'company_name',
               'requirements',
+              'company_website',
               'technologies',
               'company_description']
 
@@ -23,7 +24,7 @@ JobsDbClient = function(client){
             fields.join(', ') + 
             ') ' + 
             'values ' +
-            '($1, $2, $3, $4, $5, $6)';
+            '($1, $2, $3, $4, $5, $6, $7)';
   }
 
   object.create = function(params, success, failure){
