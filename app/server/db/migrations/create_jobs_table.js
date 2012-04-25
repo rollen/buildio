@@ -11,6 +11,7 @@ sql = 'create table jobs ( ' +
   'job_description text,' + 
   'requirements text,' + 
   'technologies text,' + 
+  'company_website text,' + 
   'company_description text );';
 
 connectionstring = 'tcp://localhost/buildio';

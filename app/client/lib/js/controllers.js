@@ -3,13 +3,14 @@ JobsController = function($scope, job){
   $scope.preview = '';
   $scope.form = 'active';
 
-  $scope.create = function(new_job){
+  $scope.create = function(){
     var new_job = { "job_title":$scope.job_title,
       "job_description":$scope.job_description,
-      "company_title":$scope.company_title,
-      "requirements":$scope.requirements,
+      "company_name":$scope.company_name,
       "technologies":$scope.technologies,
-      "company_description":$scope.company_description
+      "requirements":$scope.requirements,
+      "company_description":$scope.company_description,
+      "company_website":$scope.company_website
     };
 
     $scope.jobs.push(new_job); 

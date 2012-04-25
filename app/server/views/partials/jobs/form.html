@@ -4,14 +4,14 @@
   <div class="control-group">
     <label class="control-label"><strong>Job Title</strong></label>
     <div class="controls">
-      <input type="text" class="span6" placeholder='Software Engineer' ng-model='job_title' />
+      <input type="text" class="span6" placeholder='Software Engineer' ng-model='$parent.job_title' />
     </div>
   </div>
 
   <div class="control-group">
     <label class="control-label"><strong>Company name</strong></label>
     <div class="controls">
-      <input placeholder='e.g. Apple Inc' type="text" class="input-xlarge span6" ng-model='company_name' />
+      <input placeholder='e.g. Apple Inc' type="text" class="input-xlarge span6" ng-model='$parent.company_name' />
     </div>
   </div>
 
@@ -19,35 +19,35 @@
   <div class="control-group">
     <label class="control-label"><strong>Job Description</strong></label>
     <div class="controls">
-      <textarea placeholder='e.g. Design an develop applications for people' ng-model='job_description' class="input-xlarge span6" id="textarea" rows="3"></textarea>
+      <textarea placeholder='e.g. Design an develop applications for people' ng-model='$parent.job_description' class="input-xlarge span6" id="textarea" rows="3"></textarea>
     </div>
   </div>
 
   <div class="control-group">
     <label class="control-label"><strong>Skills & requirements</strong></label>
     <div class="controls">
-      <textarea placeholder='2 Years experience with iOS' ng-model='requirements' class="input-xlarge span6" id="textarea" rows="3"></textarea>
+      <textarea placeholder='2 Years experience with iOS' ng-model='$parent.requirements' class="input-xlarge span6" id="textarea" rows="3"></textarea>
     </div>
   </div>
 
   <div class="control-group">
     <label class="control-label"><strong>Key Technologies or Roles</strong> up to 5, seperated by commas</label>
     <div class="controls">
-      <input ng-list placeholder='e.g. Microsoft Excel, Javscript, Ruby, Communications' type="text" class="input-xlarge span6" ng-model='technologies' />
+      <input ng-list placeholder='e.g. Microsoft Excel, Javscript, Ruby, Communications' type="text" class="input-xlarge span6" ng-model='$parent.technologies' />
     </div>
   </div>
 
   <div class="control-group">
     <label class="control-label"><strong>About the company</strong></label>
     <div class="controls">
-      <textarea placeholder="Apple Inc. (NASDAQ: AAPL; formerly Apple Computer, Inc.) is an American multinational corporation that designs and sells consumer electronics, computer software, and personal computers" ng-model='company_description' class="input-xlarge span6" id="textarea" rows="3"></textarea>
+      <textarea placeholder="Apple Inc. (NASDAQ: AAPL; formerly Apple Computer, Inc.) is an American multinational corporation that designs and sells consumer electronics, computer software, and personal computers" ng-model='$parent.company_description' class="input-xlarge span6" id="textarea" rows="3"></textarea>
     </div>
   </div>
 
   <div class="control-group">
     <label class="control-label"><strong>Company website URL</strong></label>
     <div class="controls">
-      <input placeholder="www.apple.com" type="text" class="input-xlarge span6" ng-model='company_website' />
+      <input placeholder="www.apple.com" type="text" class="input-xlarge span6" ng-model='$parent.company_website' />
     </div>
   </div>
 

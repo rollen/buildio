@@ -17,23 +17,29 @@ describe('JobsController', function(){
 
   describe('.create()', function(){
     beforeEach(function(){
-      job = { 'jobs_title':'Software Engineer',
-        'company_name':'Software Comanpy',
+      scope.job_title='Software Engineer'
+      scope.job_description='Some random text here'
+      scope.company_name='Software Comanpy'
+      scope.technologies='Some random tech'
+      scope.requirements='Ruby, Rails, Javascript'
+      scope.company_description='Do lots of this that make you happy'
+      scope.company_website='http://apple.com' 
+
+      job = { 'job_title':'Software Engineer',
         'job_description':'Some random text here',
+        'company_name':'Software Comanpy',
+        'technologies':'Some random tech',
         'requirements':'Ruby, Rails, Javascript',
         'company_description':'Do lots of this that make you happy',
-        'company_website':'http://apple.com' }
-      scope.create(job);
+        'company_website':'http://apple.com' 
+      }
+      scope.create();
     });
 
     it('should attempt to persist the new job', function(){
       expect(mock.create).toHaveBeenCalledWith(job);
     });
 
-    it('should not allow an incomplete job to be submitted', function(){
-      jobs_title = '';
-      expect(mock.create).not.toHaveBeenCalled();  
-    });
   });
 
 

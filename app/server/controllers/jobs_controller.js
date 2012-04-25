@@ -11,6 +11,7 @@ JobsController = function(response, client){
   }
 
   var create = function(params){
+    console.log(params);
     client.create(params, object.on_job_created, object.on_job_creation_failed);
   }
 
