@@ -59,11 +59,11 @@ describe('JobsDbClient', function(){
   describe('.insertstring()', function(){
     it('should convert a hash into an insert statement', function(){
       var expected_query = 'INSERT INTO Jobs (' + 
-        'job_title ' +
-        'job_description ' +
-        'company_title ' +
-        'requirements ' +
-        'technologies ' +
+        'job_title, ' +
+        'job_description, ' +
+        'company_title, ' +
+        'requirements, ' +
+        'technologies, ' +
         'company_description) ' +
         'values (' +
         '$1, $2, $3, $4, $5, $6)';

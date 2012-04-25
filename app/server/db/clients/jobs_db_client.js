@@ -20,7 +20,7 @@ JobsDbClient = function(client){
     return 'INSERT INTO ' + 
             table_name + 
             ' (' + 
-            fields.join(' ') + 
+            fields.join(', ') + 
             ') ' + 
             'values ' +
             '($1, $2, $3, $4, $5, $6)';
