@@ -13,6 +13,7 @@ describe('Given I have not created any jobs', function(){
 
   describe('When I fill in the preview form', function(){
     var PREVIEW_BUTTON_SELECTOR = ':button#job_preview';
+    var PUBLISH_BUTTON_SELECTOR = ':button#job_publish';
 
     beforeEach(function(){
       input('job_title').enter('Software Engineer');
@@ -26,9 +27,11 @@ describe('Given I have not created any jobs', function(){
     });
 
     Then('I should see the preview', function(){
-      var JOB_PREVIEW_TAB_SELECTOR ='.nav#job_tabs > #job_preview_tab';
-      var JOB_FORM_TAB_SELECTOR ='.nav#job_tabs > #job_preview_tab';
+      
+      expect(element(PUBLISH_BUTTON_SELECTOR).count()).toBe(1);
+    });
 
+    describe('When I click the publish button the form should be submitted', function(){
     });
   });
 });

@@ -1,5 +1,4 @@
-JobsController = function($scope, job, $log){
-  $log.log('hello world');
+JobsController = function($scope, job){
   $scope.jobs = [];
   $scope.preview = '';
   $scope.form = 'active';
@@ -15,9 +14,4 @@ JobsController = function($scope, job, $log){
     $scope.form = temp;
   };
 }
-
-Ctrl = function($scope){
-  $scope.names = ['rollen', 'gomess'];
-}
-
 

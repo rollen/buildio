@@ -1,5 +1,7 @@
 describe('JobsController', function(){
-  var mock, scope;
+  var mock,
+  scope,
+  job;
 
   beforeEach(function(){
     mock = { create: jasmine.createSpy('job') }
@@ -15,18 +17,25 @@ describe('JobsController', function(){
 
   describe('.create()', function(){
     beforeEach(function(){
-      this.job = [{title: 'Software Engineer', description: 'Do it all'}];
-      scope.create(this.job);
-    });
-
-    it('should add a job to the list of jobs', function(){
-      expect(scope.jobs.length).toBe(1);
+      job = { 'jobs_title':'Software Engineer',
+        'company_name':'Software Comanpy',
+        'job_description':'Some random text here',
+        'requirements':'Ruby, Rails, Javascript',
+        'company_description':'Do lots of this that make you happy',
+        'company_website':'http://apple.com' }
+      scope.create(job);
     });
 
     it('should attemp to persist the new job', function(){
-      expect(mock.create).toHaveBeenCalledWith(this.job);
+      expect(mock.create).toHaveBeenCalledWith(job);
+    });
+
+    it('should not allow an incomplete job to be submitted', function(){
+      jobs_title = '';
+      expect(mock.create).not.toHaveBeenCalled();  
     });
   });
+
 
   describe('.preview', function(){
     it('should be initalize to false', function(){
@@ -39,6 +48,7 @@ describe('JobsController', function(){
       expect(scope.form).toBe('active');
     });
   });
+
 
 
   describe('.toggle_view()', function(){

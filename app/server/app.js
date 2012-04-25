@@ -4,7 +4,7 @@ AppBuilder.root = __dirname;
 require('./factories/router');
 require('./config/app_builder');
 
-require('./helpers/partials_controller_helper');
+require('./helpers/nested_resource_path_extractor');
 
 require('./factories/app_tests_controller_factory');
 require('./factories/app_root_controller_factory');
