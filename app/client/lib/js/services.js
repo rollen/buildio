@@ -5,3 +5,10 @@ angular.module('resources', ['ngResource'])
 
 
 angular.module('appify', ['resources'])
+
+myAppDev = angular.module('appifyDev', ['appify', 'ngMockE2E']);
+
+myAppDev.run(function($httpBackend){
+  $httpBackend.whenGET(/.*/).passThrough();
+});
+

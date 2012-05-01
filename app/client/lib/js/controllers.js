@@ -3,6 +3,16 @@ JobsController = function($scope, job){
   $scope.preview = '';
   $scope.form = 'active';
 
+  $scope.templates = {'form':'/partials/jobs/form.html', 'preview':'/partials/jobs/preview.html'};
+  $scope.current_template = $scope.templates['form'];
+
+  $scope.current_message_template = '';
+  $scope.message_templates = {'success':'/partials/jobs/post_success.html', 'failure':'/partials/jobs/post_failure.html'};
+
+  $scope.close_message = function(){
+    $scope.current_message_template = '';
+  }
+
   $scope.create = function(){
     var new_job = { "job_title":$scope.job_title,
       "job_description":$scope.job_description,
@@ -14,13 +24,35 @@ JobsController = function($scope, job){
     };
 
     $scope.jobs.push(new_job); 
-    job.create(new_job);
+    job.create(new_job, $scope.form_post_success, $scope.form_post_failure);
   }
 
+  $scope.form_post_success = function(){
+    $scope.current_message_template = $scope.message_templates['success'];
+  }
+
+  $scope.form_post_failure = function(){
+    $scope.current_message_template = $scope.message_templates['failure'];
+  }
+
+
   $scope.toggle_view = function(){
+    $scope.toggle_tabclasses();  
+    $scope.toggle_templates();
+  };
+
+  $scope.toggle_tabclasses = function(){
     var temp = $scope.preview;
     $scope.preview = $scope.form;
     $scope.form = temp;
-  };
+  }
+
+  $scope.toggle_templates = function(){
+    if( $scope.current_template === $scope.templates['form'] ){
+      $scope.current_template = $scope.templates['preview'];
+    }else{
+      $scope.current_template = $scope.templates['form'];
+    }
+  }
 }
 

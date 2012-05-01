@@ -5,6 +5,7 @@ describe('JobsController', function(){
 
   beforeEach(function(){
     mock = { create: jasmine.createSpy('job') }
+
     module(function($provide){
       $provide.value('job', mock);
     });
@@ -12,6 +13,38 @@ describe('JobsController', function(){
     inject(function($rootScope, $controller, job) {
       scope = $rootScope.$new();
       $controller(JobsController, {$scope: scope, job: job});
+    });
+  });
+
+  describe('.current_message_template', function(){
+    it('should initialize the message template to empty', function(){
+      expect(scope.current_message_template).toBe('');
+    });
+  });
+
+  describe('.form_post_success()', function(){
+    it('should change the state of the current_message_template to success', function(){
+      scope.form_post_success();
+      expect(scope.current_message_template).toBe('/partials/jobs/post_success.html');
+    });
+  });
+  
+  describe('.form_post_failure()', function(){
+    it('should change the state of the current_message_template to failure', function(){
+      scope.form_post_failure();
+      expect(scope.current_message_template).toBe('/partials/jobs/post_failure.html');
+    });
+
+  });
+
+  describe('.close_message()', function(){
+    beforeEach(function(){
+      scope.form_post_success();
+    });
+
+    it('should change the state of .current_message_template to empty', function(){
+      scope.close_message();
+      expect(scope.current_message_template).toBe('');
     });
   });
 
@@ -33,15 +66,29 @@ describe('JobsController', function(){
         'company_description':'Do lots of this that make you happy',
         'company_website':'http://apple.com' 
       }
+
+      spyOn(scope, 'form_post_success');
+      spyOn(scope, 'form_post_failure');
+
       scope.create();
     });
 
     it('should attempt to persist the new job', function(){
-      expect(mock.create).toHaveBeenCalledWith(job);
+      expect(mock.create).toHaveBeenCalledWith(job, scope.form_post_success, scope.form_post_failure);
     });
-
   });
 
+  describe('.current_message', function(){
+    it('should be initalized to invisible', function(){
+
+    });
+  });
+
+  describe('.current_template', function(){
+    it('should be initialized to the form', function(){
+      expect(scope.current_template).toBe('/partials/jobs/form.html');
+    });
+  });
 
   describe('.preview', function(){
     it('should be initalize to false', function(){
@@ -62,6 +109,16 @@ describe('JobsController', function(){
       scope.toggle_view();
       expect(scope.preview).toBe('active');
       expect(scope.form).toBe('');
+      expect(scope.current_template).toBe('/partials/jobs/preview.html');
+    });
+
+    it('should return back to the original when toggled twice', function(){
+      scope.toggle_view();
+      scope.toggle_view();
+      expect(scope.preview).toBe('');
+      expect(scope.form).toBe('active');
+      expect(scope.current_template).toBe('/partials/jobs/form.html');
+
     });
   });
 });
