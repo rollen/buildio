@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rake -f development/Rakefile clean
+foreman start
+

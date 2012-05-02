@@ -3,12 +3,27 @@
 //    As a advertiser
 //    I want to be able to create a jobs via the site
 
+
+
 Given('I have not created any jobs', function(){
   var PREVIEW_BUTTON_SELECTOR = ':button#job_preview';
   var PUBLISH_BUTTON_SELECTOR = ':button#job_publish';
   var MESSAGE_SELECTOR = 'div#message';
 
+  
   beforeEach(function(){
+    bs.register('create_job', function(app, angular){
+      app.run(function($httpBackend){
+        $httpBackend.whenGET(/partials/).passThrough();
+        $httpBackend.whenPOST('/jobs', '{"job_title":"Software Engineer"}').respond(function(method, url, data, headers){
+          console.log(data);
+          return [404, data, headers];
+        });
+        $httpBackend.whenPOST('/jobs').respond(function(method, url, data, headers){
+          return [200, data, headers];
+        });
+      });
+    });
     browser().navigateTo('index');
   });
 

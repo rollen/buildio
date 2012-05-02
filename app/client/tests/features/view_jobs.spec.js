@@ -1,15 +1,19 @@
 Given('I have some job postings', function(){
   beforeEach(function(){
-
+    bs.register('view_jobs', function(app){
+      app.run(function($httpBackend){
+        $httpBackend.whenGET(/partials/).passThrough();
+      });
+    });
   });
 
-  When('I go the jobs page', function(){
+  When('I go to the jobs page', function(){
     beforeEach(function(){
-      browser().navigateTo('/jobs');
+      browser().navigateTo('/index');
     });
 
-    Then('I should see the jobs on the page', function(){
-      
+    Then('I should see all the jobs on the page', function(){
     });
   });
 });
+

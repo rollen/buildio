@@ -55,7 +55,7 @@ task :clean => :clear
 
 desc 'clear up processes'
 task :clear do
-  ports = ['9877', '10000']
+  ports = ['9877', '10000', '5000']
   ports.each do |port|
     cmd = "lsof -i :#{port} | tail -n +2 | awk '{print $2}' | xargs kill"
       puts "killing processes on port #{port}"
