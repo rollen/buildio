@@ -5,6 +5,8 @@ AppBuilder.createRouter = function(request, response, filesystem){
     ,HttpRouteFactory.createGet('/index', AppRootControllerFactory, 'show')
     ,HttpRouteFactory.createGet('/home', AppRootControllerFactory, 'show')
     ,HttpRouteFactory.createGet('/', AppRootControllerFactory, 'show')
+    ,HttpRouteFactory.createGet('/jobs', AppRootControllerFactory, 'show')
+
     ,HttpRouteFactory.createPost('/jobs', JobsControllerFactory, 'create')
     ,HttpRoute(PartialControllerFactory, 'show', RegexRouteMatcher(/^\/partials/))
     ,HttpRoute(AngularControllerFactory, 'show', RegexRouteMatcher(/^\/lib/))
