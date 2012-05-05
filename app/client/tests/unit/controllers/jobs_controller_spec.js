@@ -23,18 +23,17 @@ describe('JobsController', function(){
   });
 
   describe('.form_post_success()', function(){
-    it('should change the state of the current_message_template to success', function(){
+    it('should change the state of the current_message_template to be the success message', function(){
       scope.form_post_success();
       expect(scope.current_message_template).toBe('/lib/partials/jobs/status_messages/post_success.html');
     });
   });
 
   describe('.form_post_failure()', function(){
-    it('should change the state of the current_message_template to failure', function(){
+    it('should change the state of the current_message_template to be the failure message', function(){
       scope.form_post_failure();
       expect(scope.current_message_template).toBe('/lib/partials/jobs/status_messages/post_failure.html');
     });
-
   });
 
   describe('.close_message()', function(){
