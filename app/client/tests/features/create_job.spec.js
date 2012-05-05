@@ -24,7 +24,7 @@ Given('I have not created any jobs', function(){
         });
       });
     });
-    browser().navigateTo('index');
+    browser().navigateTo('jobs/new');
   });
 
   When('I do not fill up the form correctly', function(){

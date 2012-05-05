@@ -3,7 +3,8 @@ angular.module('resources', ['ngResource'])
     return $resource('/jobs/:id', {}, {create: {method: 'POST'}});
   });
 
-module = angular.module('appify', ['resources']);
+
+module = angular.module('appify', ['resources','routes']);
 
 parent.mocks ? parent.mocks(module, angular.mock.e2e.$httpBackendDecorator, angular) : []
 

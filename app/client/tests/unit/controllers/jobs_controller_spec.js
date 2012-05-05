@@ -25,14 +25,14 @@ describe('JobsController', function(){
   describe('.form_post_success()', function(){
     it('should change the state of the current_message_template to success', function(){
       scope.form_post_success();
-      expect(scope.current_message_template).toBe('/partials/jobs/post_success.html');
+      expect(scope.current_message_template).toBe('/lib/partials/jobs/post_success.html');
     });
   });
   
   describe('.form_post_failure()', function(){
     it('should change the state of the current_message_template to failure', function(){
       scope.form_post_failure();
-      expect(scope.current_message_template).toBe('/partials/jobs/post_failure.html');
+      expect(scope.current_message_template).toBe('/lib/partials/jobs/post_failure.html');
     });
 
   });
@@ -86,7 +86,7 @@ describe('JobsController', function(){
 
   describe('.current_template', function(){
     it('should be initialized to the form', function(){
-      expect(scope.current_template).toBe('/partials/jobs/form.html');
+      expect(scope.current_template).toBe('/lib/partials/jobs/form.html');
     });
   });
 
@@ -109,7 +109,7 @@ describe('JobsController', function(){
       scope.toggle_view();
       expect(scope.preview).toBe('active');
       expect(scope.form).toBe('');
-      expect(scope.current_template).toBe('/partials/jobs/preview.html');
+      expect(scope.current_template).toBe('/lib/partials/jobs/preview.html');
     });
 
     it('should return back to the original when toggled twice', function(){
@@ -117,7 +117,7 @@ describe('JobsController', function(){
       scope.toggle_view();
       expect(scope.preview).toBe('');
       expect(scope.form).toBe('active');
-      expect(scope.current_template).toBe('/partials/jobs/form.html');
+      expect(scope.current_template).toBe('/lib/partials/jobs/form.html');
 
     });
   });

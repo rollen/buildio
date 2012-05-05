@@ -3,11 +3,11 @@ JobsController = function($scope, job){
   $scope.preview = '';
   $scope.form = 'active';
 
-  $scope.templates = {'form':'/partials/jobs/form.html', 'preview':'/partials/jobs/preview.html'};
+  $scope.templates = {'form':'/lib/partials/jobs/form.html', 'preview':'/lib/partials/jobs/preview.html'};
   $scope.current_template = $scope.templates['form'];
 
   $scope.current_message_template = '';
-  $scope.message_templates = {'success':'/partials/jobs/post_success.html', 'failure':'/partials/jobs/post_failure.html'};
+  $scope.message_templates = {'success':'/lib/partials/jobs/post_success.html', 'failure':'/lib/partials/jobs/post_failure.html'};
 
   $scope.close_message = function(){
     $scope.current_message_template = '';

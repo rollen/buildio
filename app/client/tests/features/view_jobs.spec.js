@@ -1,31 +1,21 @@
 Given('I have some job postings', function(){
-
-  var Factory = function(record_name){
-    var object;
-    object.create = function(number_of_records){
-
-    }
-    return object;
-  }
-
-  Factory.define('job'
-
   beforeEach(function(){
     bs.register('view_jobs', function(app){
       app.run(function($httpBackend){
-        var jobs = Factory('job').create(1);
+        var job = Factory.create('job');
         $httpBackend.whenGET(/partials/).passThrough();
-        $httpBackend.whenGET('jobs.json').respond();
+        $httpBackend.whenGET('jobs.json').respond(job);
       });
     });
   });
 
   When('I go to the jobs page', function(){
     beforeEach(function(){
-      browser().navigateTo('/index');
+      browser().navigateTo('/jobs');
     });
 
     Then('I should see all the jobs on the page', function(){
+      expect(element('div#jobs > .job').count()).toBe(1);
     });
   });
 });

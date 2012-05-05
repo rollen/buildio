@@ -1,21 +1,29 @@
 <html ng-app='appify'>
   <head>
     <link rel="stylesheet" href="/assets/bootstrap.css">
-    <script src="assets/angular.js"></script>
-    <script src="assets/angular-resource.js"></script>
-    <script src="assets/angular-mocks.js"></script>
-    <script src="lib/js/services.js"></script>
-    <script src="lib/js/controllers.js"></script>
+    <script src="/assets/angular.js"></script>
+    <script src="/assets/angular-resource.js"></script>
+    <script src="/assets/angular-mocks.js"></script>
+
+    <script src="/lib/js/config/router.js"></script>
+
+    <script src="/lib/js/services.js"></script>
+    <script src="/lib/js/controllers.js"></script>
+    <script src="/lib/js/controllers/main_controller.js"></script>
     <link rel="stylesheet" href="/lib/css/bootstrap-extensions.css">
     <meta name='viewport' content="width=device-width", initial-scale='1.0' />
   </head>
   <body>
     <div class='container'>
-      <div ng-include src="'partials/navigation/navbar.html'"> </div>
+      <div ng-include src="'/lib/partials/navigation/navbar.html'"> </div>
       <div class="row-fluid">
-        <div class="span2" ng-include="'partials/navigation/campaigns/navlist.html'">
+        <div class="span2" ng-include="'/lib/partials/navigation/campaigns/navlist.html'">
         </div>
-        <div class="span6 container-fluid" ng-include="'partials/jobs/new.html'">
+        <div class="span6 container-fluid">
+          <div ng-controller="MainController">
+            <div ng-view></div>
+            <hr />
+          </div>
         </div>
       </div>
     </div>
