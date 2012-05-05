@@ -4,7 +4,7 @@ angular.module('resources', ['ngResource'])
   });
 
 
-module = angular.module('appify', ['resources','routes']);
+appify = angular.module('appify', ['resources','routes']);
 
-parent.mocks ? parent.mocks(module, angular.mock.e2e.$httpBackendDecorator, angular) : []
+parent.mocks ? parent.mocks(appify, angular.mock.e2e.$httpBackendDecorator, angular) : []
 

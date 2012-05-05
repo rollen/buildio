@@ -25,14 +25,14 @@ describe('JobsController', function(){
   describe('.form_post_success()', function(){
     it('should change the state of the current_message_template to success', function(){
       scope.form_post_success();
-      expect(scope.current_message_template).toBe('/lib/partials/jobs/post_success.html');
+      expect(scope.current_message_template).toBe('/lib/partials/jobs/status_messages/post_success.html');
     });
   });
-  
+
   describe('.form_post_failure()', function(){
     it('should change the state of the current_message_template to failure', function(){
       scope.form_post_failure();
-      expect(scope.current_message_template).toBe('/lib/partials/jobs/post_failure.html');
+      expect(scope.current_message_template).toBe('/lib/partials/jobs/status_messages/post_failure.html');
     });
 
   });

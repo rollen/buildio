@@ -7,7 +7,7 @@ JobsController = function($scope, job){
   $scope.current_template = $scope.templates['form'];
 
   $scope.current_message_template = '';
-  $scope.message_templates = {'success':'/lib/partials/jobs/post_success.html', 'failure':'/lib/partials/jobs/post_failure.html'};
+  $scope.message_templates = {'success':'/lib/partials/jobs/status_messages/post_success.html', 'failure':'/lib/partials/jobs/status_messages/post_failure.html'};
 
   $scope.close_message = function(){
     $scope.current_message_template = '';
