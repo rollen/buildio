@@ -9,4 +9,5 @@ guard 'livereload', :port => '35728' do
   watch(%r{config/locales/.+\.yml})
   # Rails Assets Pipeline
   watch(%r{(app|vendor)/assets/\w+/(.+\.(css|js|html)).*})  { |m| "/assets/#{m[2]}" }
+  watch(%r{app/client/lib/partials/.+})
 end

@@ -23,7 +23,6 @@ JobsController = function($scope, job){
       "company_website":$scope.company_website
     };
 
-    $scope.jobs.push(new_job); 
     job.create(new_job, $scope.form_post_success, $scope.form_post_failure);
   }
 

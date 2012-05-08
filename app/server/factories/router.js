@@ -6,9 +6,11 @@ AppBuilder.createRouter = function(request, response, filesystem){
     ,HttpRouteFactory.createGet('/home', AppRootControllerFactory, 'show')
     ,HttpRouteFactory.createGet('/', AppRootControllerFactory, 'show')
     ,HttpRouteFactory.createGet('/jobs', AppRootControllerFactory, 'show')
+    ,HttpRouteFactory.createGet('/jobs/', AppRootControllerFactory, 'show')
     ,HttpRouteFactory.createGet('/jobs/new', AppRootControllerFactory, 'show')
 
-    ,HttpRouteFactory.createPost('/jobs', JobsControllerFactory, 'create')
+    ,HttpRouteFactory.createPost('/api/jobs', JobsControllerFactory, 'create')
+    ,HttpRouteFactory.createGet('/api/jobs', JobsControllerFactory, 'index')
 
     ,HttpRoute(AngularControllerFactory, 'show', RegexRouteMatcher(/^\/lib/))
   ];

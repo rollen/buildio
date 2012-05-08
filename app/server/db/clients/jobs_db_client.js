@@ -27,11 +27,22 @@ JobsDbClient = function(client){
             '($1, $2, $3, $4, $5, $6, $7)';
   }
 
+  object.selectstring = function(table_name){
+    return 'SELECT * FROM ' + table_name;
+  }
+
   object.create = function(params, success, failure){
     var q = client.query(object.insertstring('Jobs'), object.values(params));
     q.on('end', success);
     q.on('error', failure);
   }
 
-  return object
+
+  object.get = function(success, failure){
+    var q = client.query(object.selectstring('Jobs'));
+    q.on('end', success);
+    q.on('error', failure);
+  }
+
+  return object;
 }

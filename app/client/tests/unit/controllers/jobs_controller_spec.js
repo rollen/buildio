@@ -4,7 +4,8 @@ describe('JobsController', function(){
   job;
 
   beforeEach(function(){
-    mock = { create: jasmine.createSpy('job') }
+    mock = { create: jasmine.createSpy('create'),
+             get: jasmine.createSpy('get').andReturn([])}
 
     module(function($provide){
       $provide.value('job', mock);
@@ -101,8 +102,6 @@ describe('JobsController', function(){
     });
   });
 
-
-
   describe('.toggle_view()', function(){
     it('should toggle the preview', function(){
       scope.toggle_view();
@@ -117,7 +116,12 @@ describe('JobsController', function(){
       expect(scope.preview).toBe('');
       expect(scope.form).toBe('active');
       expect(scope.current_template).toBe('/lib/partials/jobs/form.html');
+    });
+  });
 
+  describe('.jobs', function(){
+    it('gets set to the job resource', function(){
+      expect(mock.get).toHaveBeenCalled();
     });
   });
 });
