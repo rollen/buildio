@@ -13,6 +13,7 @@ describe('JobsDbClient', function(){
     params = { title:"Software Engineer", description:"Lots of Work" }
     success = jasmine.createSpy("success");
     failure = jasmine.createSpy("failure");
+    row = jasmine.createSpy("row");
 
     client = {}
     client.query = jasmine.createSpy("query").andReturn({on:function(str, func){func()}});
@@ -23,18 +24,23 @@ describe('JobsDbClient', function(){
   describe('.get', function(){
     it('should initialize the query and call it', function(){
       var selectstring = 'SELECT * FROM Jobs';
-      system_under_test.get(success, failure);
+      system_under_test.get(success, failure, row);
       expect(client.query).toHaveBeenCalledWith(selectstring);
     });
 
     it('should register the callbacks to the success function', function(){
-      system_under_test.get(success, failure);
+      system_under_test.get(success, failure, row);
       expect(success).toHaveBeenCalled();
     });
 
     it('should register the callbacks to the failure function', function(){
-      system_under_test.get(success, failure);
+      system_under_test.get(success, failure, row);
       expect(success).toHaveBeenCalled();
+    });
+
+    it('should register the callbacks to the row function', function(){
+      system_under_test.get(success, failure, row);
+      expect(row).toHaveBeenCalled();
     });
   });
 

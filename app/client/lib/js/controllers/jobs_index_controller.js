@@ -1,3 +1,3 @@
 function JobsIndexController($scope, job){
-  $scope.job = job.get();
+  $scope.jobs = job.get();
 }

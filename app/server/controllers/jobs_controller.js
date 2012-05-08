@@ -22,7 +22,8 @@ JobsController = function(response, client){
   }
 
   object.on_job_get_success = function(){
-    response.end(object.cache);
+    response.writeHead(200, {"Content-Type":"application/json"});
+    response.end(JSON.stringify(object.cache));
   }
 
   var index = function(){

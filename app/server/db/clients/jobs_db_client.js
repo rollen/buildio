@@ -38,10 +38,11 @@ JobsDbClient = function(client){
   }
 
 
-  object.get = function(success, failure){
+  object.get = function(success, failure, row){
     var q = client.query(object.selectstring('Jobs'));
     q.on('end', success);
     q.on('error', failure);
+    q.on('row', row);
   }
 
   return object;

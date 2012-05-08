@@ -2,7 +2,7 @@ angular.module('resources', ['ngResource'])
   .factory('job', function($resource){
     return $resource('/api/jobs/:id', {}, {
       create: {method: 'POST'},
-      get: {method: 'GET'},
+      get: {method: 'GET', isArray:true},
     });
   });
 
