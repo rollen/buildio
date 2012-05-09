@@ -1,0 +1,27 @@
+<div id="job_preview_contents" class='well span6'>
+  <h1>{{job_title}}</h1>
+  <a ng-href="{{company_website}}">{{company_name}}</a>
+
+  <hr />
+  <h2>Job Description</h2>
+  <p>{{job_description}}</p> 
+  <br /><hr />
+
+  <h2>Skills & Requirements</h2>
+  <p>{{requirements}}</p>
+  <br /><hr />
+
+  <h2>Company Description</h2>
+  <p>{{company_description}}</p>
+  <br /><hr />
+
+  <h2>Technologies & Roles</h2>
+  <p>
+  <span ng-repeat='t in technologies' class="label label-info ">{{t}}</span>
+  </p>
+</div>
+<div class="form-actions span6">
+  <button class='btn btn-primary'>
+    Apply 
+  </button>
+</div>

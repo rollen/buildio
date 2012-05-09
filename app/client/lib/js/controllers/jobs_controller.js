@@ -2,6 +2,7 @@ JobsController = function($scope, job){
   $scope.jobs = [];
   $scope.preview = '';
   $scope.form = 'active';
+  $scope.title = 'Preview';
 
   $scope.templates = {'form':'/lib/partials/jobs/form.html', 'preview':'/lib/partials/jobs/preview.html'};
   $scope.current_template = $scope.templates['form'];
