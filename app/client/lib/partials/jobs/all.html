@@ -1,5 +1,5 @@
 <h1>Jobs</h1>
 <hr />
-<div class='well span6' id='jobs' ng-repeat='j in jobs'>
-  <strong>{{j.company_name}}</strong> is hiring a {{j.job_title}}</p>
-</div>
+<a class='well span6' id='jobs' ng-repeat='j in jobs' ng-href='/jobs/{{j.id}}'>
+  <p><strong>{{j.company_name}}</strong> is hiring a {{j.job_title}}</p>
+</a>
