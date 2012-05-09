@@ -13,6 +13,23 @@ var  params,
     controller = JobsController(response, jobs_db_client);
   });
 
+  describe('.show', function(){
+    it('gets a single job from the database', function(){
+      var urlparams = {"id":"1"}
+      spyOn(jobs_db_client, 'get');
+      spyOn(controller, 'on_job_get_success');
+      spyOn(controller, 'on_command_fail');
+      spyOn(controller, 'on_row_received');
+
+      controller = JobsController(response, jobs_db_client, urlparams);
+      controller.show();
+      expect(jobs_db_client.get).toHaveBeenCalledWith(controller.on_job_get_success,
+                                                     controller.on_command_fail,
+                                                     controller.on_row_received,
+                                                     "1");
+    });
+  });
+
   describe('.index', function(){
     it('gets all the jobs from the database', function(){
       spyOn(jobs_db_client, 'get');
@@ -32,14 +49,6 @@ var  params,
       var row = jasmine.createSpy('row');
       controller.on_row_received(row);
       expect(controller.cache).toEqual([row]);
-    });
-  });
-
-  describe('.on_job_get_success', function(){
-    it('should write the cache to the response', function(){
-      spyOn(response, 'end');
-      controller.on_job_get_success();
-      expect(response.end).toHaveBeenCalledWith(controller.cache);
     });
   });
 

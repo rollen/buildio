@@ -1,5 +1,8 @@
-JobsController = function(response, client){
+JobsController = function(response, client, urlparams){
   var object = {};
+  object.response = response;
+  object.client = client;
+  object.urlparams = urlparams;
 
   object.cache = [];
 
@@ -30,8 +33,13 @@ JobsController = function(response, client){
     client.get(object.on_job_get_success, object.on_command_fail, object.on_row_received);
   }
 
+  var show = function(){
+    client.get(object.on_job_get_success, object.on_command_fail, object.on_row_received, urlparams['id'] );
+  }
+
   object.create = create;
   object.index = index;
+  object.show = show;
 
   return object;
 }

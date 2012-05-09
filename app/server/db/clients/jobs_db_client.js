@@ -2,12 +2,13 @@ JobsDbClient = function(client){
   var object = {}
 
   var fields = ['job_title',
-              'job_description',
-              'company_name',
-              'requirements',
-              'company_website',
-              'technologies',
-              'company_description']
+    'job_description',
+    'company_name',
+    'requirements',
+    'company_website',
+    'technologies',
+    'company_description'
+  ]
 
   object.values = function(params){
     var temp = [];
@@ -19,12 +20,12 @@ JobsDbClient = function(client){
 
   object.insertstring= function(table_name){
     return 'INSERT INTO ' + 
-            table_name + 
-            ' (' + 
-            fields.join(', ') + 
-            ') ' + 
-            'values ' +
-            '($1, $2, $3, $4, $5, $6, $7)';
+      table_name + 
+      ' (' + 
+      fields.join(', ') + 
+      ') ' + 
+      'values ' +
+      '($1, $2, $3, $4, $5, $6, $7)';
   }
 
   object.selectstring = function(table_name){
@@ -38,8 +39,16 @@ JobsDbClient = function(client){
   }
 
 
-  object.get = function(success, failure, row){
-    var q = client.query(object.selectstring('Jobs'));
+  object.makegetquery = function(id){
+    var getquery = object.selectstring('Jobs');
+    if(id){
+      getquery += (' where id=' + id);  
+    }
+    return getquery; 
+  }
+
+  object.get = function(success, failure, row, id){
+    var q = client.query(object.makegetquery(id));
     q.on('end', success);
     q.on('error', failure);
     q.on('row', row);

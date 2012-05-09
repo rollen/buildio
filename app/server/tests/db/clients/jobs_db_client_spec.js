@@ -28,6 +28,12 @@ describe('JobsDbClient', function(){
       expect(client.query).toHaveBeenCalledWith(selectstring);
     });
 
+    it('should allow for id to be passed in to retrieve a specfic record', function(){
+      var selectstring = 'SELECT * FROM Jobs where id=5';
+      system_under_test.get(success, failure, row, 5);
+      expect(client.query).toHaveBeenCalledWith(selectstring);
+    });
+
     it('should register the callbacks to the success function', function(){
       system_under_test.get(success, failure, row);
       expect(success).toHaveBeenCalled();

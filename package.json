@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "nervex" : "https://aveprod:thisismypassword123@github.com/rollen/nerve/tarball/master",
+    "simplefactory" : "https://aveprod:thisismypassword123@github.com/rollen/simplefactory/tarball/master",
     "pg": "latest"
   }
 }

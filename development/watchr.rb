@@ -13,7 +13,7 @@ watch('app/client/tests/features/') do
   system('rake -f ./development/Rakefile test:run')
 end
 
-watch('app/server') do
+watch('app/server/tests/') do
   system('clear')
   puts "Running Server specs"
   system('jasmine-node app/server/tests/')

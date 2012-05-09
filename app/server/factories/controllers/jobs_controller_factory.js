@@ -1,6 +1,8 @@
 JobsControllerFactory = function(){}
 
-JobsControllerFactory.build = function(request, response, filesystem){
+JobsControllerFactory.build = function(request, response, filesystem, route_template){
   var client = JobsDbClientFactory();
-  return JobsController(response, client);
+  var urlparams = HttpUrlParamsExtractor(route_template).extract(request.url);
+
+  return JobsController(response, client, urlparams);
 }
