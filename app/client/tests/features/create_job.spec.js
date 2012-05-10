@@ -16,12 +16,13 @@ Given('I have not created any jobs', function(){
       app.run(function($httpBackend){
         var job = Factory.create('job');
         $httpBackend.whenGET(/partials/).passThrough();
-        $httpBackend.whenGET('api/jobs').respond(job);
-        $httpBackend.whenPOST('api/jobs', '{"job_title":"Software Engineer"}').respond(function(method, url, data, headers){
+        $httpBackend.whenGET('/api/jobs').respond(job);
+        $httpBackend.whenPOST('/api/jobs', '{"job_title":"Software Engineer"}').respond(function(method, url, data, headers){
           console.log(data);
           return [404, data, headers];
         });
-        $httpBackend.whenPOST('api/jobs').respond(function(method, url, data, headers){
+
+        $httpBackend.whenPOST('/api/jobs').respond(function(method, url, data, headers){
           return [200, data, headers];
         });
       });
