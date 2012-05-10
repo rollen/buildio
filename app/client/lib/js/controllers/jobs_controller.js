@@ -1,16 +1,12 @@
 JobsController = function($scope, job){
   $scope.jobs = [];
-  $scope.preview = '';
-  $scope.title = 'Preview';
-
-
   $scope.current_message_template = '';
   $scope.message_templates = {'success':'/lib/partials/jobs/status_messages/post_success.html', 'failure':'/lib/partials/jobs/status_messages/post_failure.html'};
 
   $scope.close_message = function(){
     $scope.current_message_template = '';
   }
-
+  
   $scope.create = function(){
     var new_job = { "job_title":$scope.job_title,
       "job_description":$scope.job_description,

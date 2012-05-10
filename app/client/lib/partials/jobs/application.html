@@ -1,28 +1,33 @@
 <h1> Application Form Preview</h1>
 <br />
-<div class='well span6'>
-  <div id='socialtoolbar'>
+<div class='row'>
+  <div class='well span6'>
+    <br />
+    <div id='applicationform'>
+      <h2>Application Form</h2>
+      <hr />
+      <form>
+        <label class="control-label">Resume</label>
+        <input type="file" />
+        <div class="form-actions">
+          <button ng-click="" class='btn btn-primary' id='job_preview'>
+            Cancel
+          </button>
+          <button ng-click="" class='btn btn-success' id='job_publish'>
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class='well span2' id='socialtoolbar'>
+    <h2> Toolbar </h2>
+    <hr />
     <img ng-src="/lib/assets/icons/monochrome/32/circle/facebook.png" />
     <img ng-src="/lib/assets/icons/monochrome/32/circle/twitter.png" />
     <img ng-src="/lib/assets/icons/monochrome/32/circle/github_alt.png" />
-  </div>
-
-  <br />
-  <div id='applicationform'>
-    <form>
-      <label class="control-label">Resume</label>
-      <input type="file" />
-
-
-      <div class="form-actions">
-        <button ng-click="" class='btn btn-primary' id='job_preview'>
-          Cancel
-        </button>
-        <button ng-click="" class='btn btn-success' id='job_publish'>
-          Submit
-        </button>
-      </div>
-    </form>
+    <img ng-src="/lib/assets/icons/monochrome/32/circle/blogger.png" />
   </div>
 </div>
 
