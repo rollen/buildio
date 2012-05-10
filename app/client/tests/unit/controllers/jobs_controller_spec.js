@@ -5,16 +5,16 @@ describe('JobsController', function(){
 
   beforeEach(function(){
     mock = { create: jasmine.createSpy('create'),
-             get: jasmine.createSpy('get').andReturn([])}
+      get: jasmine.createSpy('get').andReturn([])}
 
-    module(function($provide){
-      $provide.value('job', mock);
-    });
+      module(function($provide){
+        $provide.value('job', mock);
+      });
 
-    inject(function($rootScope, $controller, job) {
-      scope = $rootScope.$new();
-      $controller(JobsController, {$scope: scope, job: job});
-    });
+      inject(function($rootScope, $controller, job) {
+        scope = $rootScope.$new();
+        $controller(JobsController, {$scope: scope, job: job});
+      });
   });
 
   describe('.current_message_template', function(){
@@ -102,26 +102,16 @@ describe('JobsController', function(){
     });
   });
 
-  describe('.toggle_view()', function(){
-    it('should toggle the preview', function(){
-      scope.toggle_view();
-      expect(scope.preview).toBe('active');
-      expect(scope.form).toBe('');
+  describe('.switch_view()', function(){
+    it('should switch view to the named view', function(){
+      scope.switch_view('preview');
       expect(scope.current_template).toBe('/lib/partials/jobs/preview.html');
     });
 
-    it('should return back to the original when toggled twice', function(){
-      scope.toggle_view();
-      scope.toggle_view();
-      expect(scope.preview).toBe('');
-      expect(scope.form).toBe('active');
-      expect(scope.current_template).toBe('/lib/partials/jobs/form.html');
-    });
-  });
-
-  describe('.jobs', function(){
-    it('gets set to the job resource', function(){
-      expect(mock.get).toHaveBeenCalled();
+    it('should only set the tabswitch of a single view', function(){
+      scope.switch_view('preview');
+      expect(scope.tab_switch['preview']).toEqual('active');
     });
   });
 });
+

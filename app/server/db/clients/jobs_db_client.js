@@ -12,7 +12,8 @@ JobsDbClient = function(client){
 
   object.values = function(params){
     var temp = [];
-    for(var key in params){
+    for(var i = 0 ; i < fields.length; i++){
+      var key = fields[i]
       temp.push(params[key]);
     }
     return temp;

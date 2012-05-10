@@ -52,13 +52,29 @@ describe('JobsDbClient', function(){
 
   describe('.create', function(){
     it('should delegate the creation of the object to postgres', function(){
-     var querystring = "INSERT INTO Jobs (title, description) values ($1, $2)"
-      spyOn(system_under_test, 'insertstring').andReturn(querystring);
-      spyOn(system_under_test, 'values').andReturn(['Soft', 'Title']);
+      var params = { 'job_title':'Software Engineer',
+        'job_description':'Job Description',
+        'company_name':'Company Title',
+        'requirements':'Requirements',
+        'company_website':'Company Website',
+        'technologies':'Technologies',
+        'company_description':'Company Description' 
+      };
+
+      var values =['Software Engineer',
+        'Job Description',
+        'Company Title',
+        'Requirements',
+        'Company Website',
+        'Technologies',
+        'Company Description'
+      ];
+
+      var querystring = 'INSERT INTO Jobs (job_title, job_description, company_name, requirements, company_website, technologies, company_description) values ($1, $2, $3, $4, $5, $6, $7)'
 
       system_under_test.create(params, success, failure);
 
-      expect(client.query).toHaveBeenCalledWith(querystring, ['Soft','Title']);
+      expect(client.query).toHaveBeenCalledWith(querystring, values);
     });
 
     it('should expect the callbacks to be regsitered', function(){
@@ -78,13 +94,13 @@ describe('JobsDbClient', function(){
         'technologies':'Technologies',
         'company_description':'Company Description' };
 
-      expect(system_under_test.values(params)).toEqual(['Software Engineer',
-                                                   'Job Description',
-                                                   'Company Title',
-                                                   'Requirements',
-                                                   'Company Website',
-                                                   'Technologies',
-                                                   'Company Description']);
+        expect(system_under_test.values(params)).toEqual(['Software Engineer',
+                                                         'Job Description',
+                                                         'Company Title',
+                                                         'Requirements',
+                                                         'Company Website',
+                                                         'Technologies',
+                                                         'Company Description']);
     });
   });
 

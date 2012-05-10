@@ -17,8 +17,10 @@
 
 
 <ul class="nav nav-tabs span7" id='job_tabs'>
-  <li ng-click='toggle_view()' ng-class="form" id='job_form_tab'><a href="#">New Job</a></li>
-  <li ng-click='toggle_view()' ng-class="preview" id='job_preview_tab'><a>Preview</a></li>
+  <li ng-click='switch_view("form")' ng-class="tab_switch['form']" id='job_form_tab'><a href="#">New Job</a></li>
+  <li ng-click='switch_view("application")' ng-class="tab_switch['application']"
+    id='job_application_form_tab'><a>Application</a></li>
+  <li ng-click='switch_view("preview")' ng-class="tab_switch['preview']" id='job_preview_tab'><a>Preview</a></li>
 </ul>
 
 <div ng-include='current_template'></div>

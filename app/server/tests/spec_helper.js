@@ -13,3 +13,5 @@ When = function(string, func){
 And = function(string, func){
   describe('And ' + string, func);
 }
+
+tag = 0;

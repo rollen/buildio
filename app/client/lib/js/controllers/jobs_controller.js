@@ -1,5 +1,6 @@
 JobsController = function($scope, job){
   $scope.jobs = [];
+  $scope.tab_switch= {'form':'active'};
   $scope.preview = '';
   $scope.form = 'active';
   $scope.title = 'Preview';
@@ -36,23 +37,11 @@ JobsController = function($scope, job){
   }
 
 
-  $scope.toggle_view = function(){
-    $scope.toggle_tabclasses();  
-    $scope.toggle_templates();
-  };
+  $scope.switch_view = function(name){
+    $scope.current_template = '/lib/partials/jobs/' + name + '.html'; 
+    $scope.tab_switch = {};
+    $scope.tab_switch[name] = 'active';
 
-  $scope.toggle_tabclasses = function(){
-    var temp = $scope.preview;
-    $scope.preview = $scope.form;
-    $scope.form = temp;
-  }
-
-  $scope.toggle_templates = function(){
-    if( $scope.current_template === $scope.templates['form'] ){
-      $scope.current_template = $scope.templates['preview'];
-    }else{
-      $scope.current_template = $scope.templates['form'];
-    }
   }
 }
 
