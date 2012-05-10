@@ -78,27 +78,9 @@ describe('JobsController', function(){
     });
   });
 
-  describe('.current_message', function(){
-    it('should be initalized to invisible', function(){
-
-    });
-  });
-
   describe('.current_template', function(){
     it('should be initialized to the form', function(){
       expect(scope.current_template).toBe('/lib/partials/jobs/form.html');
-    });
-  });
-
-  describe('.preview', function(){
-    it('should be initalize to false', function(){
-      expect(scope.preview).toBe('');
-    });
-  });
-
-  describe('.form', function(){
-    it('should be initalize to active', function(){
-      expect(scope.form).toBe('active');
     });
   });
 

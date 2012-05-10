@@ -1,12 +1,8 @@
 JobsController = function($scope, job){
   $scope.jobs = [];
-  $scope.tab_switch= {'form':'active'};
   $scope.preview = '';
-  $scope.form = 'active';
   $scope.title = 'Preview';
 
-  $scope.templates = {'form':'/lib/partials/jobs/form.html', 'preview':'/lib/partials/jobs/preview.html'};
-  $scope.current_template = $scope.templates['form'];
 
   $scope.current_message_template = '';
   $scope.message_templates = {'success':'/lib/partials/jobs/status_messages/post_success.html', 'failure':'/lib/partials/jobs/status_messages/post_failure.html'};
@@ -37,6 +33,8 @@ JobsController = function($scope, job){
   }
 
 
+  $scope.current_template = '/lib/partials/jobs/form.html';
+  $scope.tab_switch= {'form':'active'};
   $scope.switch_view = function(name){
     $scope.current_template = '/lib/partials/jobs/' + name + '.html'; 
     $scope.tab_switch = {};
