@@ -1,5 +1,4 @@
 JobsController = function($scope, job){
-  $scope.jobs = [];
   $scope.current_message_template = '';
   $scope.message_templates = {'success':'/lib/partials/jobs/status_messages/post_success.html', 'failure':'/lib/partials/jobs/status_messages/post_failure.html'};
 
