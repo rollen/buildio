@@ -24,7 +24,9 @@
   <div class='well span2' id='socialtoolbar'>
     <h2> Toolbar </h2>
     <hr />
-    <img ng-src="/lib/assets/icons/monochrome/32/circle/facebook.png" />
+    <div controller='ImageSwitchController'>
+      <img ng-src="current_image" />
+    </div>
     <img ng-src="/lib/assets/icons/monochrome/32/circle/twitter.png" />
     <img ng-src="/lib/assets/icons/monochrome/32/circle/github_alt.png" />
     <img ng-src="/lib/assets/icons/monochrome/32/circle/blogger.png" />

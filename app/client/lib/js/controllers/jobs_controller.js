@@ -1,6 +1,7 @@
 JobsController = function($scope, job){
-  $scope.current_message_template = '';
   $scope.message_templates = {'success':'/lib/partials/jobs/status_messages/post_success.html', 'failure':'/lib/partials/jobs/status_messages/post_failure.html'};
+  $scope.current_message_template = '';
+  $scope.partial = 'form';
 
   $scope.close_message = function(){
     $scope.current_message_template = '';
@@ -28,13 +29,11 @@ JobsController = function($scope, job){
   }
 
 
-  $scope.current_template = '/lib/partials/jobs/form.html';
   $scope.tab_switch= {'form':'active'};
   $scope.switch_view = function(name){
-    $scope.current_template = '/lib/partials/jobs/' + name + '.html'; 
+    $scope.partial = name;
     $scope.tab_switch = {};
     $scope.tab_switch[name] = 'active';
-
   }
 }
 

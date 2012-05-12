@@ -78,21 +78,25 @@ describe('JobsController', function(){
     });
   });
 
-  describe('.current_template', function(){
+  describe('.partial', function(){
     it('should be initialized to the form', function(){
-      expect(scope.current_template).toBe('/lib/partials/jobs/form.html');
+      expect(scope.partial).toBe('form');
     });
   });
 
   describe('.switch_view()', function(){
-    it('should switch view to the named view', function(){
+    it('should change the partials name to its first argument', function(){
       scope.switch_view('preview');
-      expect(scope.current_template).toBe('/lib/partials/jobs/preview.html');
+      expect(scope.partial).toBe('preview');
     });
 
     it('should only set the tabswitch of a single view', function(){
       scope.switch_view('preview');
+      scope.switch_view('form');
+      scope.switch_view('preview');
+
       expect(scope.tab_switch['preview']).toEqual('active');
+      expect(scope.tab_switch['form']).toBeFalsy();
     });
   });
 });
