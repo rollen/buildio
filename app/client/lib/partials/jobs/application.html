@@ -21,20 +21,17 @@
     </div>
   </div>
 
-  <div class='well span2' id='socialtoolbar' ng-controller='ImageSwitchController'>
+
+
+  <div class='well span2' id='socialtoolbar'>
     <h2> Toolbar </h2>
+    <div id='sprite1' />
     <hr />
 
-    <img ng-mouseleave='image_type="monochrome"' 
-      ng-mouseover='image_type="colored"' 
-      ng-init="image_name='twitter'" 
-      ng-src="/lib/assets/icons/{{image_type}}/32/circle/{{image_name}}.png"
-    />
-    
-
-    <img ng-src="/lib/assets/icons/monochrome/32/circle/twitter.png" />
-    <img ng-src="/lib/assets/icons/monochrome/32/circle/github_alt.png" />
-    <img ng-src="/lib/assets/icons/monochrome/32/circle/blogger.png" />
+    <img ng-controller='ImageSwitchController'
+      ng-style='css' 
+      ng-mouseleave='onmouseleave()' 
+      ng-mouseover='onmouseover()'/>
   </div>
 </div>
 

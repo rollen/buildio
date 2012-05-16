@@ -15,7 +15,6 @@ describe('ImageSwitchController', function(){
   });
 
   it('should set its current image to default', function(){
-    expect(scope.current_image).toEqual('facebook.png');
   });
 
   context('ImageSwitchController image has not been clicked, defaultstate', function(){
