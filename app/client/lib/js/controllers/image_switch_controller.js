@@ -1,24 +1,25 @@
 function ImageSwitchController($scope){
-  $scope.resetcss = function(){
+  $scope.resetcss = function(offsetx, offsety){
     $scope.css={
       "background": "transparent " + 
-        "url(/lib/assets/icons/"+ $scope.image_type +"/32/circle/twitter.png) " +
-        "-16px " +
+        "url(/lib/assets/sprites/social_buttons.png) " + 
+        offsety + " " +offsetx + " " +
         "no-repeat",
       "height":"32px",
       "width":"32px"
     };
   }
+
   $scope.onmouseover = function(){
     $scope.image_type='colored';
-    $scope.resetcss();
+    $scope.resetcss("0px", "-192px");
   }
 
   $scope.onmouseleave = function(){
     $scope.image_type='monochrome';
-    $scope.resetcss();
+    $scope.resetcss("-32px", "-192px");
   }
 
   $scope.image_type = 'monochrome';
-  $scope.resetcss();
+  $scope.resetcss("-32px", "-192px");
 }

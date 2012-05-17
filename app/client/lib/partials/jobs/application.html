@@ -25,10 +25,17 @@
 
   <div class='well span2' id='socialtoolbar'>
     <h2> Toolbar </h2>
-    <div id='sprite1' />
     <hr />
 
-    <img ng-controller='ImageSwitchController'
+    <img id=twitter_button />
+    <img 
+      ng-controller='ImageSwitchController'
+      ng-style='css' 
+      ng-mouseleave='onmouseleave()' 
+      ng-mouseover='onmouseover()'/>
+
+    <img 
+      ng-controller='ImageSwitchController'
       ng-style='css' 
       ng-mouseleave='onmouseleave()' 
       ng-mouseover='onmouseover()'/>
