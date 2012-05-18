@@ -1,4 +1,5 @@
-function ImageSwitchController($scope){
+function ImageSwitchController($scope, $attrs){
+  console.log($attrs);
   $scope.resetcss = function(offsetx, offsety){
     $scope.css={
       "background": "transparent " + 
